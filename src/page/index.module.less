@@ -1,0 +1,114 @@
+.flip_card {
+  width: 300px;
+  height: 150px;
+  perspective: 1000px;
+  border-radius: 4px;
+
+  .flip_card_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 4px;
+  }
+
+  .flip_card_inner_open {
+    .flip_card_inner();
+    transform: rotateY(180deg);
+  }
+
+  /* 将鼠标移到翻转框容器上时进行水平翻转 */
+  #open:checked ~ .flip_card_inner {
+    transform: rotateY(180deg);
+  }
+
+  /* 定位正面和背面 */
+  .flip_card_front,
+  .flip_card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 6px 6px 6px rgb(52, 52, 52);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* 设置正面的样式（如果图像丢失则回退）*/
+  .flip_card_front {
+    background-color: #fff;
+  }
+
+  /* 为背面设置样式 */
+  .flip_card_back {
+    background-color: #fff;
+    transform: rotateY(180deg);
+  }
+
+  .kid_slogan {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.text_wrapper {
+  margin-top: 24px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  .avatar_wrapper {
+    width: 40px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span {
+      margin-top: 4px;
+      font-size: 12px;
+      color: rgb(163, 97, 105);
+    }
+  }
+}
+
+.calendar_wrapper {
+  width: 300px;
+  margin-top: 24px;
+  background-color: rgba(213, 213, 222, 0.8);
+  border: 0px;
+  border-radius: 6px;
+  :global {
+    .arco-calendar-header-icon {
+      background-color: rgba(241, 186, 189, 0.7) !important;
+    }
+  }
+}
+
+.right_message {
+  font-size: 16px;
+  background-color: rgba(231, 227, 209, 0.8);
+  border: 0px;
+  border-radius: 4px;
+}
+
+.text_info_wrapper {
+  .text_wrapper();
+}
+
+.info_wrapper {
+  width: 280px;
+  margin: 12px;
+}
+
+.other_img {
+  width: 100px;
+}
+
+.unvisible {
+  width: 0px;
+  height: 0px;
+}
